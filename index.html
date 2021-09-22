@@ -15,36 +15,36 @@
 <body>
     <section id="main">
         <div class="base">
-            <div class="resultado">
+            <div class="display">
                 <div class="historico">
-                    <p class="valor-historico"> </p>
+                    <p class="valor-historico" id="valor"> </p>
                 </div>
                 <div class="saida">
-                    <p class="valor-saida"> 0 </p>
+                    <p id="display"> </p>
                 </div>
             </div>
             <div class="botoes">
                 <hr>
-                <button class="operadores" id="clear">AC</button>
-                <button class="operadores fas fa-backspace" id="apagar"></button>
-                <button class="operadores" id="%">%</button>
-                <button class="operadores" id="/">&divide;</button>
-                <button class="numeros" id="7">7</button>
-                <button class="numeros" id="8">8</button>
-                <button class="numeros" id="9">9</button>
-                <button class="operadores" id="*">x</button>
-                <button class="numeros" id="4">4</button>
-                <button class="numeros" id="5">5</button>
-                <button class="numeros" id="6">6</button>
-                <button class="operadores" id="-">-</button>
-                <button class="numeros" id="1">1</button>
-                <button class="numeros" id="2">2</button>
-                <button class="numeros" id="3">3</button>
-                <button class="operadores" id="+">+</button>
-                <button class="operadores" id="github"><i class="fab fa-github"></i></button>
-                <button class="numeros" id="0">0</button>
-                <button class="numeros" id="ponto">,</button>
-                <button class="operadores igual" id="=">=</button>
+                <button class="operadores" onclick="limpar()">AC</button>
+                <button class="operadores fas fa-backspace" onclick="retroceder()"></button>
+                <button class="operadores" onclick="inserir('%')">%</button>
+                <button class="operadores" onclick="inserir('/')">&divide;</button>
+                <button class="numeros" onclick="inserir('7')">7</button>
+                <button class="numeros" onclick="inserir('8')">8</button>
+                <button class="numeros" onclick="inserir('9')">9</button>
+                <button class="operadores" onclick="inserir('*')">x</button>
+                <button class="numeros" onclick="inserir('4')">4</button>
+                <button class="numeros" onclick="inserir('5')">5</button>
+                <button class="numeros" onclick="inserir('6')">6</button>
+                <button class="operadores" onclick="inserir('-')">-</button>
+                <button class="numeros" onclick="inserir('1')">1</button>
+                <button class="numeros" onclick="inserir('2')">2</button>
+                <button class="numeros" onclick="inserir('3')">3</button>
+                <button class="operadores" onclick="inserir('+')">+</button>
+                <a href="https://github.com/alxrds" target="_blank" class="operadores" id="github"><i class="fab fa-github"></i></a>
+                <button class="numeros" onclick="inserir('0')">0</button>
+                <button class="numeros" onclick="inserir('.')">,</button>
+                <button class="operadores igual" onclick="calcular()">=</button>
             </div>
         </div>
     </section>

@@ -5,7 +5,7 @@ body {
 
 .base {
     width: 320px;
-    height: 520px;
+    height: 550px;
     background: #fff;
     margin: 15px auto;
     border-radius: 10px;
@@ -41,7 +41,7 @@ body {
 
 hr {
     margin: 0 20px;
-    border: 0.2px solid lightgray;
+    border: 0.1px solid #ccc;
 }
 
 .numeros, .vazio {
