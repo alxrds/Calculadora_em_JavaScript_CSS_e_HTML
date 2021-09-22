@@ -1,18 +1,18 @@
 calculadora = true;
 operacao = '';
 
-function inserir(num){
-
+function inserir(btn){
     if(calculadora){
         numero = document.getElementById('display').innerHTML;
-        document.getElementById('display').innerHTML = numero + num;
-    
-        if(num == '+' || num == '-' || num == '/' || num == '*' || num == '%' && !operacao){
-            valor = document.getElementById('display').innerHTML = numero + num;
-            document.getElementById('valor').innerHTML = valor;
-            valor1 = valor.substring(0, valor.length -1);
-            operacao = num;
-            document.getElementById('display').innerHTML = '';
+        document.getElementById('display').innerHTML = numero + btn;
+        if(btn == '+' || btn == '-' || btn == '/' || btn == '*' || btn == '%'){
+            operacao = btn;
+            if(operacao){
+                valor = document.getElementById('display').innerHTML = numero + btn;
+                document.getElementById('valor').innerHTML = valor;
+                valor1 = valor.substring(0, valor.length -1);
+                document.getElementById('display').innerHTML = '';
+            }
         }
     }
 }
