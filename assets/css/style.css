@@ -5,15 +5,17 @@ body {
 
 .base {
     width: 320px;
-    height: 550px;
+    height: 580px;
     background: #fff;
     margin: 15px auto;
     border-radius: 10px;
     border: 2px solid ccc;
 }
 
-.resultado {
-    height: 120px;
+.calculo {
+    padding-left: 20px;
+    margin: 0;
+    color: #111;
 }
 
 .historico {

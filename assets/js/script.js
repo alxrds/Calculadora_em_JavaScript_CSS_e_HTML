@@ -1,59 +1,88 @@
-calculadora = true;
-operacao = '';
+
+operacao = false;
+let sinal = '';
+let valor1 = '';
+let valor2 = '';
 
 function inserir(btn){
-    if(calculadora){
-        numero = document.getElementById('display').innerHTML;
-        document.getElementById('display').innerHTML = numero + btn;
-        if(btn == '+' || btn == '-' || btn == '/' || btn == '*' || btn == '%'){
-            operacao = btn;
-            if(operacao){
-                valor = document.getElementById('display').innerHTML = numero + btn;
-                document.getElementById('valor').innerHTML = valor;
-                valor1 = valor.substring(0, valor.length -1);
-                document.getElementById('display').innerHTML = '';
-            }
+
+
+    numero = document.getElementById('display').innerHTML += btn;
+
+    if(btn == '+' || btn == '-' || btn == '/' || btn == '*' || btn == '%' || btn == '='){
+        
+        let valor = document.getElementById('display').innerHTML = numero;
+
+            document.getElementById('valor').innerHTML += valor;
+
+        if(valor1 && operacao){
+            valor2 = valor.substring(0, valor.length -1);
         }
+
+        if(!valor1 && !valor2 && !operacao){
+            valor1 = document.getElementById('display').innerHTML.substring(0, valor.length -1);
+            operacao = true;
+        }
+
+        document.getElementById('display').innerHTML = '';
+        
     }
+  
+    sinal = btn;
+
+    if(!sinal){
+        document.getElementById('calculo').innerHTML = 0;
+    }
+
+    if(valor2){
+
+        if(sinal == '+'){
+            calculo = parseFloat(valor1) + parseFloat(valor2);
+            document.getElementById('calculo').innerHTML = calculo;
+            valor1 = calculo;
+            valor2 = '';
+        }
+
+        if(sinal == '-'){
+            calculo = parseFloat(valor1) - parseFloat(valor2);
+            document.getElementById('calculo').innerHTML = calculo;
+            valor1 = calculo;
+            valor2 = '';
+        }
+
+        if(sinal == '*'){
+            calculo = parseFloat(valor1) * parseFloat(valor2);
+            document.getElementById('calculo').innerHTML = calculo;
+            valor1 = calculo;
+            valor2 = '';
+        }
+
+        if(sinal == '/'){
+            calculo = parseFloat(valor1) * parseFloat(valor2);
+            document.getElementById('calculo').innerHTML = calculo;
+            valor1 = calculo;
+            valor2 = '';
+        }
+
+    }
+
+    console.log('valor1 ' + valor1);
+    console.log('sinal ' + sinal);
+    console.log('valor2 ' + valor2);
+
 }
 
 function limpar(){
-    document.getElementById('display').innerHTML = '';
-    document.getElementById('valor').innerHTML = '';
-    calculadora = true;
+window.location.reload();
 }
 
 function retroceder(){
-    if(calculadora){
-        let resultado = document.getElementById('display').innerHTML;
-        document.getElementById('display').innerHTML = resultado.substring(0, resultado.length -1);
-    }
+
+    let resultado = document.getElementById('display').innerHTML;
+    document.getElementById('display').innerHTML = resultado.substring(0, resultado.length -1);
+
 }
 
 function calcular(){
-    valor2 = document.getElementById('display').innerHTML;
-    document.getElementById('valor').innerHTML = valor1 + operacao + valor2;
     
-    switch (operacao){
-        case '+':
-            document.getElementById('display').innerHTML = valor1 + valor2;
-            break;
-        case '-':
-            document.getElementById('display').innerHTML = valor1 - valor2;
-            break;
-        case '/':
-            document.getElementById('display').innerHTML = valor1 / valor2;
-            break;
-        case '*':
-            document.getElementById('display').innerHTML = valor1 * valor2;
-            break;
-        case '%':
-            document.getElementById('display').innerHTML = (valor2 - valor1) / valor1 * 100;
-            break;
-        default:
-            document.getElementById('display').innerHTML = '';
-            break;
-    }
-
-    calculadora = false;
 }
