@@ -66,10 +66,6 @@ function inserir(btn){
 
     }
 
-    console.log('valor1 ' + valor1);
-    console.log('sinal ' + sinal);
-    console.log('valor2 ' + valor2);
-
 }
 
 function limpar(){
