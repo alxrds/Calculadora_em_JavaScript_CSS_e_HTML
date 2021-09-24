@@ -1,84 +1,56 @@
-
-operacao = false;
-let sinal = '';
-let valor1 = '';
-let valor2 = '';
+let valor = '';
+let lista = '';
 
 function inserir(btn){
-
-
-    numero = document.getElementById('display').innerHTML += btn;
-
-    if(btn == '+' || btn == '-' || btn == '/' || btn == '*' || btn == '%' || btn == '='){
-        
-        let valor = document.getElementById('display').innerHTML = numero;
-
-            document.getElementById('valor').innerHTML += valor;
-
-        if(valor1 && operacao){
-            valor2 = valor.substring(0, valor.length -1);
-        }
-
-        if(!valor1 && !valor2 && !operacao){
-            valor1 = document.getElementById('display').innerHTML.substring(0, valor.length -1);
-            operacao = true;
-        }
-
+    let numero = document.getElementById('display').innerHTML += btn;
+    if(btn == '+'){
+        valor = numero;
+        lista += valor;
+        document.getElementById('valor').innerHTML = lista;
         document.getElementById('display').innerHTML = '';
-        
     }
-  
-    sinal = btn;
-
-    if(!sinal){
-        document.getElementById('calculo').innerHTML = 0;
+    if(btn == '-'){
+        valor = numero;
+        lista += valor;
+        document.getElementById('valor').innerHTML = lista;
+        document.getElementById('display').innerHTML = '';
     }
-
-    if(valor2){
-
-        if(sinal == '+'){
-            calculo = parseFloat(valor1) + parseFloat(valor2);
-            document.getElementById('calculo').innerHTML = calculo;
-            valor1 = calculo;
-            valor2 = '';
-        }
-
-        if(sinal == '-'){
-            calculo = parseFloat(valor1) - parseFloat(valor2);
-            document.getElementById('calculo').innerHTML = calculo;
-            valor1 = calculo;
-            valor2 = '';
-        }
-
-        if(sinal == '*'){
-            calculo = parseFloat(valor1) * parseFloat(valor2);
-            document.getElementById('calculo').innerHTML = calculo;
-            valor1 = calculo;
-            valor2 = '';
-        }
-
-        if(sinal == '/'){
-            calculo = parseFloat(valor1) * parseFloat(valor2);
-            document.getElementById('calculo').innerHTML = calculo;
-            valor1 = calculo;
-            valor2 = '';
-        }
-
+    if(btn == '*'){
+        valor = numero;
+        lista += valor;
+        document.getElementById('valor').innerHTML = lista;
+        document.getElementById('display').innerHTML = '';
     }
-
+    if(btn == '/'){
+        valor = numero;
+        lista += valor;
+        document.getElementById('valor').innerHTML = lista;
+        document.getElementById('display').innerHTML = '';
+    }
+    if(btn == '%'){
+        valor = numero;
+        lista += valor;
+        document.getElementById('valor').innerHTML = lista;
+        document.getElementById('display').innerHTML = '';
+    }
 }
 
 function limpar(){
-window.location.reload();
+    window.location.reload();
 }
 
 function retroceder(){
-
     let resultado = document.getElementById('display').innerHTML;
     document.getElementById('display').innerHTML = resultado.substring(0, resultado.length -1);
-
 }
 
 function calcular(){
-    
+    let numDisplay = document.getElementById('display').innerHTML;
+    lista += numDisplay;
+    document.getElementById('valor').innerHTML = lista;
+    if(numDisplay != ''){
+
+        document.getElementById('display').innerHTML = lista;
+
+    }
 }
