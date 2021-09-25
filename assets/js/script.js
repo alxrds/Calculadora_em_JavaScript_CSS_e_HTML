@@ -6,8 +6,6 @@ let calcList = [];
 let ultimoCalculo = '';
 let calculadora = true;
 
-
-
     function inserir(btn){
 
         numero = document.getElementById('display').innerHTML += btn;
@@ -36,6 +34,7 @@ let calculadora = true;
             console.log('operação: '+ultimaOperacao)
             console.log('numero2: '+num2)
             console.log('total: '+ultimoCalculo)
+            console.log('lista: '+calcList)
         
         }
     
@@ -87,7 +86,7 @@ let calculadora = true;
             valor = numero;
             ultimaOperacao = btn;
             lista += valor;
-    
+
             if(!num1){
                 num1 = document.getElementById('display').innerHTML.substring(0, valor.length -1);
             }else{
@@ -142,6 +141,7 @@ function calcular(){
 
     let numDisplay = document.getElementById('display').innerHTML;
     lista += numDisplay;
+    calcList.push(numDisplay)
     document.getElementById('valor').innerHTML = lista;
     
     num2 = numDisplay;
@@ -166,9 +166,12 @@ function calcular(){
 
     calculadora = false;
 
-    console.log('numero1: '+num1)
-    console.log('operação: '+ultimaOperacao)
-    console.log('numero2: '+num2)
-    console.log('total: '+ultimoCalculo)
+    console.log('numero1: '+ num1)
+    console.log('operação: '+ ultimaOperacao)
+    console.log('numero2: '+ num2)
+    console.log('total: '+ ultimoCalculo)
+    console.log('lista: '+ calcList)
+
+
 
 }
