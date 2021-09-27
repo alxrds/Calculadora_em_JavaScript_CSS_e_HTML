@@ -49,8 +49,7 @@ function igual(){
 }
 
 function calcular(num1, operator, num2){
-
-    switch (operator){
+    switch(operator){
         case "+":
             return Number(num1) + Number(num2);
         case "-":
@@ -60,15 +59,11 @@ function calcular(num1, operator, num2){
         case "/":
             return Number(num1) / Number(num2);
     }
-
-    resultadoFinal()
-
+    resultadoFinal();
 }
 
 function resultadoFinal(){
-
     inp = historico.split(' ');
-
     if(inp.includes('*') || inp.includes('/')){
         let i = 0;
         while(inp[i]){
