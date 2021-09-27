@@ -1,49 +1,29 @@
 let valor = '';
 let historico = '';
+calculadora = true;
 
 function inserir(btn){
+    if(calculadora){
+        numero = document.getElementById('display').innerHTML;
 
-    numero = document.getElementById('display').innerHTML;
-
-    if(btn == '+' || btn == '-' || btn == '*' || btn == '/'){
-        numero = document.getElementById('display').innerHTML += ' ' + btn;
-    }else{
-        numero = document.getElementById('display').innerHTML += btn;
-    }
-    
-    if(btn == '+' || btn == '-' || btn == '*' || btn == '/'){
-        
-        if(historico.length === 0){
-            historico += numero;
-        }else if(historico.length > 0){
-            historico += ' ' + numero;
-        }
-
-        document.getElementById('valor').innerHTML = historico;
-        document.getElementById('display').innerHTML = '';
-    }
-
-    if(btn == '%'){
-        valor = numero;
-        historico += ' '+valor;
-
-        if(!num1){
-            num1 = document.getElementById('display').innerHTML.substring(0, valor.length -1);
+        if(btn == '+' || btn == '-' || btn == '*' || btn == '/'){
+            numero = document.getElementById('display').innerHTML += ' ' + btn;
         }else{
-            num2 = document.getElementById('display').innerHTML.substring(0, valor.length -1);
+            numero = document.getElementById('display').innerHTML += btn;
         }
-
-        if(num1 && num2){
-            ultimoCalculo = (parseFloat(num2) - parseFloat(num1)) * num1 / 100;
-            num1 = ultimoCalculo;
-            num2 = ' ';
-        }
-
-        document.getElementById('valor').innerHTML = historico;
-        document.getElementById('display').innerHTML = '';
+        
+        if(btn == '+' || btn == '-' || btn == '*' || btn == '/'){
+            
+            if(historico.length === 0){
+                historico += numero;
+            }else if(historico.length > 0){
+                historico += ' ' + numero;
+            }
     
+            document.getElementById('valor').innerHTML = historico;
+            document.getElementById('display').innerHTML = '';
+        }
     }
-
 }
 
 function limpar(){
@@ -60,10 +40,12 @@ function retroceder(){
 }
 
 function igual(){
-    let numDisplay = document.getElementById('display').innerHTML;
-    historico += ' ' + numDisplay;
-    document.getElementById('valor').innerHTML = historico;
-    calcular();
+    if(calculadora){
+        let numDisplay = document.getElementById('display').innerHTML;
+        historico += ' ' + numDisplay;
+        document.getElementById('valor').innerHTML = historico;
+        calcular();
+    }
 }
 
 function calcular(num1, operator, num2){
@@ -109,4 +91,5 @@ function resultadoFinal(){
         i++
     }
     document.getElementById('display').innerHTML = inp;
+    calculadora = false;
 }
