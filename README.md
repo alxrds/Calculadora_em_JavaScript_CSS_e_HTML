@@ -4,3 +4,6 @@ As cores e estilos são baseados na Calculadora do Xiaomi Poco X3 Pro.
 
 
 ![Preview](https://github.com/alxrds/alxrds.github.io/blob/main/assets/img/print.PNG?raw=true)
+
+
+https://alxrds.github.io/Calculadora_em_JavaScript_CSS_e_HTML_sem_eval/
