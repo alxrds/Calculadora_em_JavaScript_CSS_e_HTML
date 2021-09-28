@@ -1,5 +1,5 @@
 # Calculadora em HTML, CSS e Javascript
-Calculadora em HTML, CSS e JavaScript sem usar eval, esecuta as operações matemáticas em ordem.
+Calculadora em HTML, CSS e JavaScript sem usar eval, executa as operações matemáticas em ordem.
 As cores são baseadas na Calculadora do Xiaomi Poco X3 Pro.
 
 
